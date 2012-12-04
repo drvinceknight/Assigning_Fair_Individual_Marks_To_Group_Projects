@@ -213,7 +213,137 @@
 
                 ---
 
-                Assume Amy, Bernard and Caroline work on a group project.
+                - Assume Amy, Bernard and Caroline work on a group project.
+                - Assume the marking criteria states: 70% output and 30% group work.
+                - Assume the total mark given to the project is 85%.
+
+                </section>
+
+                <section>
+                <h2>Contributions</h2>
+                <hr>
+                <table style="margin:auto" border="1">
+                <tr>
+                <th>$S$</th>
+                <th>$v(C)$</th>
+                </tr>
+                <tr>
+                <td>$A$</td>
+                <td>40</td>
+                </tr>
+                <tr>
+                <td>$B$</td>
+                <td>40</td>
+                </tr>
+                <tr>
+                <td>$C$</td>
+                <td>20</td>
+                </tr>
+                <tr>
+                <td>$\{A,B\}$</td>
+                <td>70</td>
+                </tr>
+                <tr>
+                <td>$\{A,C\}$</td>
+                <td>60</td>
+                </tr>
+                <tr>
+                <td>$\{B,C\}$</td>
+                <td>40</td>
+                </tr>
+                </table>
+
+
+                </section>
+
+
+                <section>
+                <h2>Shapley Value Calculation</h2>
+                <hr>
+                <table style="margin:auto" border="1">
+                <tr>
+                <th>$\pi$</th>
+                <th>Amy</th>
+                <th>Bernard</th>
+                <th>Caroline</th>
+                </tr>
+                <tr>
+                <td>(A,B,C)</td>
+                <td>$40$</td>
+                <td>$30$</td>
+                <td>$30$</td>
+                </tr>
+                <tr>
+                <td>(A,C,B)</td>
+                <td>$40$</td>
+                <td>$40$</td>
+                <td>$20$</td>
+                </tr>
+                <tr>
+                <td>(B,A,C)</td>
+                <td>$30$</td>
+                <td>$40$</td>
+                <td>$30$</td>
+                </tr>
+                <tr>
+                <td>(B,C,A)</td>
+                <td>$40$</td>
+                <td>$60$</td>
+                <td>$0$</td>
+                </tr>
+                <tr>
+                <td>(C,A,B)</td>
+                <td>$40$</td>
+                <td>$40$</td>
+                <td>$20$</td>
+                </tr>
+                <tr>
+                <td>(C,B,A)</td>
+                <td>$60$</td>
+                <td>$20$</td>
+                <td>$20$</td>
+                </tr>
+                <tr class='fragment'>
+                <td>
+                $\phi$
+                </td>
+                <td>
+                ${125\over3}\approx41.67$
+                </td>
+                <td>
+                ${115\over3}\approx36.7$
+                </td>
+                <td>
+                $20$
+                </td>
+                </tr>
+                </table>
+                </section>
+
+
+                <section>
+                <h2>Mark Calculation</h2>
+                <hr>
+                $$i=M\times\left(\text{OP}+\text{CW}\times{\phi(i)\over \max_j{\phi(j)}}\right)$$
+                </section>
+
+                <section>
+                $$A=85\times(.7+.3)=85$$
+                <hr>
+                $$B=85\times(.7+.3\times {11\over 125})\approx 82.96$$
+                <hr>
+                $$C=85\times(.7+.3\times{12\over25})\approx 71.74$$
+                </section>
+
+
+                <section data-markdown>
+                ##The real problem...
+
+                ---
+
+                How do we get $\phi$?
+
+                ![fowm_pic](https://docs.google.com/drawings/pub?id=1nSoxZtx8lZuhW6ewpfTFrlPjLMDxV-QltVkxPwENaUc&w=800)
                 </section>
 			</div>
 
