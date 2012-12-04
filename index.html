@@ -75,7 +75,7 @@
                 </section>
 
 
-                <section>
+                <section data-state="Math_Slide">
                 <h2>Cooperative Games</h2>
 
                 <hr>
@@ -123,27 +123,28 @@
                 </ul>
                 </section>
 
-                <section align="left">
+                <section>
                 <h2> Superadditive Games</h2>
 
                 <hr>
+                <p align='left'>
                 A characteristic function game $G=(N,v)$ is said to be superadditive if it satisfies $v(C\cup D)\geq v(C)+v(D)$ for all pairs $C,D\subseteq N$.
-                <hr>
-                <p align="center">
-                <img src="https://docs.google.com/drawings/pub?id=19ukbxZySY8VmFbyO495lZel7PzwJslvAgw6ULDUY_6U&amp;w=800" >
                 </p>
+                <hr>
+                <img src="https://docs.google.com/drawings/pub?id=19ukbxZySY8VmFbyO495lZel7PzwJslvAgw6ULDUY_6U&amp;w=800" >
 
                 </section>
 
-                <section align="left">
+                <section data-state="Math_Slide">
                 <h2>Solution Concepts</h2>
                 <hr>
-
+                <p align="left">
                 The 'solution' of a superadditive game corresponds to a vector: $x\in\mathbb{R}^{|N|}_{\geq0}$ that satisfies:
                 $$\sum_{i\in N}x_i=v(N)$$
+                </p>
                 </section>
 
-                <section align="left">
+                <section>
                 <h2> Fair distribution</h2>
                 <hr>
                 <ol>
@@ -219,7 +220,7 @@
 
                 </section>
 
-                <section>
+                <section data-state='Math_Slide'<>
                 <h2>Contributions</h2>
                 <hr>
                 <table style="margin:auto" border="1">
@@ -324,19 +325,19 @@
                 <section>
                 <h2>Mark Calculation</h2>
                 <hr>
-                $$i=M\times\left(\text{OP}+\text{CW}\times{\phi(i)\over \max_j{\phi(j)}}\right)$$
+                $$\text{m}(i)=\text{M}\times\left(\text{OP}+\text{CW}\times{\phi(i)\over \max_j{\phi(j)}}\right)$$
                 </section>
 
                 <section>
-                $$A=85\times(.7+.3)=85$$
+                $$\text{m}(A)=85\times(.7+.3)=85$$
                 <hr>
-                $$B=85\times(.7+.3\times {11\over 125})\approx 82.96$$
+                $$\text{m}(B)=85\times(.7+.3\times {11\over 125})\approx 82.96$$
                 <hr>
-                $$C=85\times(.7+.3\times{12\over25})\approx 71.74$$
+                $$\text{m}(C)=85\times(.7+.3\times{12\over25})\approx 71.74$$
                 </section>
 
 
-                <section data-markdown>
+                <section data-state='Math_Slide' data-markdown>
                 ##The real problem...
 
                 ---
@@ -374,7 +375,7 @@
 				]
 			});
 
-            Reveal.addEventListener( 'slidechanged', function( event ) {
+            Reveal.addEventListener( "Math_Slide", function( event ) {
                 MathJax.Hub.Rerender();
                 } );
 
