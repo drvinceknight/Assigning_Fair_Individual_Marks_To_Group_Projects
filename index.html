@@ -95,37 +95,125 @@
 
                 <section>
                 <h2> Characteristic Function Games</h2>
-                Include definition here.
+                <hr>
+                <p align="left">
+                A characteristic game $G$ is given by a pair: $(N,v)$. Where:
+                $$v:2^{N}\to\mathbb{R}$$
+                is a characteristic function which maps each coalition $C\subseteq N$ to a real number $v(C)$.
+                </p>
                 </section>
 
 
                 <section>
-                <h2> Ice Cream example</h2>
+                <h2>Taxi Problem</h2>
+                <hr>
+                <p align="centre">
+                <img src="https://docs.google.com/drawings/pub?id=19HXdzeOPNyNuTpXm_21HZPMcBKfsH4tZsozAW3eSAco&amp;w=800">
+                </p>
+                <hr>
+                <p align="left">
+                $N=\{A,B\}$
+                and we have:
+                </p>
+                <ul>
+                <li>$v(\emptyset)=0$</li>
+                <li>$v(A)=5$</li>
+                <li>$v(B)=12$</li>
+                <li>$v(A,B)=12$</li>
+                </ul>
                 </section>
 
-                <section>
+                <section align="left">
                 <h2> Superadditive Games</h2>
 
+                <hr>
+                A characteristic function game $G=(N,v)$ is said to be superadditive if it satisfies $v(C\cup D)\geq v(C)+v(D)$ for all pairs $C,D\subseteq N$.
+                <hr>
+                <p align="center">
+                <img src="https://docs.google.com/drawings/pub?id=19ukbxZySY8VmFbyO495lZel7PzwJslvAgw6ULDUY_6U&amp;w=800" >
+                </p>
+
+                </section>
+
+                <section align="left">
+                <h2>Solution Concepts</h2>
+                <hr>
+
+                The 'solution' of a superadditive game corresponds to a vector: $x\in\mathbb{R}^{|N|}_{\geq0}$ that satisfies:
+                $$\sum_{i\in N}x_i=v(N)$$
+                </section>
+
+                <section align="left">
+                <h2> Fair distribution</h2>
+                <hr>
+                <ol>
+                    <li>Efficiency: $\sum_{i\in N}x_i$=v(N);</li>
+                    <li>Dummy player: if $i$ does not contribute, then $x_i=0$;</li>
+                    <li>Symmetry: if $i$ and $j$ are symmetric in then $x_i=x_j$;</li>
+                    <li>Additivity: (look it up if you're interested).</li>
+                <ol>
+
+
                 </section>
 
                 <section>
-                <h2>Solution Concepts</h2>
-
+                <h2>Taxi Problem</h2>
+                <hr>
+                <p align="centre">
+                <img src="https://docs.google.com/drawings/pub?id=19HXdzeOPNyNuTpXm_21HZPMcBKfsH4tZsozAW3eSAco&amp;w=800">
+                </p>
+                <hr>
+                <table style="margin:auto" border="1">
+                <tr>
+                <th>$\pi$</th>
+                <th>Alice</th>
+                <th>Bob</th>
+                </tr>
+                <tr>
+                <td>(A,B)</td>
+                <td>5</td>
+                <td>7</td>
+                </tr>
+                <tr>
+                <td>(B,A)</td>
+                <td>0</td>
+                <td>12</td>
+                </tr>
+                <tr class='fragment'>
+                <td>
+                $\phi$
+                </td>
+                <td>
+                2.5
+                </td>
+                <td>
+                9.5
+                </td>
+                </tr>
+                </table>
                 </section>
 
                 <section>
                 <h2>Shapley Value</h2>
+                <hr>
+                <p align="left">
+                Given a characteristic function game $G=(N,v)$ the Shapley value of a player $i\in N$ is given by:
+                $$\phi_{i}(G)={1\over |N|!}\sum_{\pi\in\Pi_N}\Delta_{\pi}^{G}(i)$$
+                </p>
 
                 </section>
 
-                <section>
-                Revisit the Ice Cream example
 
+                <section data-markdown>
+                ##Why am I telling you this?
                 </section>
 
+                <section data-markdown>
+                ##Applying this to group work
 
-                <section>
-                Applying this to course work marks
+                ---
+
+                Assume Amy, Bernard and Caroline work on a group project.
                 </section>
 			</div>
 
