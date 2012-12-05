@@ -97,13 +97,17 @@ class Coop_Game():
                 print "The characteristic function must be a dictionary."
                 print ""
 
-     def shapley(self):
+    def shapley(self):
         self.shapley=Shapley_calculation(self.player_list,self.characteristic_function)
         return self.shapley
 
-#pl=["A","B","C"]
-#cf={"A":1,"B":3,"A,B":3,"B,C":2,"A,B,C":5,"A,C":2,"C":4}
-#print Shapley_calculation(pl,cf)
-#a=Coop_Game(pl,cf)
+pl=["A","B","C"]
+cf={"A":1,"B":3,"A,B":3,"B,C":2,"A,B,C":5,"A,C":2,"C":4}
+a=Coop_Game(pl,cf)
+print a.shapley()
+pl=["A","B"]
+cf={"A":5,"B":12,"A,B":12}
+a=Coop_Game(pl,cf)
+print a.shapley()
 #print a.valid
 #print a.characteristic_function
