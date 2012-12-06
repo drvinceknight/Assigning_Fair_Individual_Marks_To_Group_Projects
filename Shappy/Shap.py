@@ -23,7 +23,6 @@ def characteristic_function_check(player_list,characteristic_function):
         if ",".join(e) not in characteristic_function:
             return False
     #Need include check that dictionary is Monotone
-    for in e power_set(pl
     return r
 
 def predecessors(player,player_permutation):
