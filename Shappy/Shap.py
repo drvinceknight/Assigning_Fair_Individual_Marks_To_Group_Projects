@@ -19,10 +19,19 @@ def characteristic_function_check(player_list,characteristic_function):
     A function to check if a characteristic_function is valid
     """
     r=True
-    for e in power_set(player_list):
+    player_power_set=power_set(player_list)
+    for e in player_power_set:
         if ",".join(e) not in characteristic_function:
+            print "ERROR: characteristic_function domain does not match players."
             return False
-    #Need include check that dictionary is Monotone
+    for e in player_power_set:
+        e=",".join(e)
+        for b in player_power_set:
+            b=",".join(b)
+            if e in b:
+                if characteristic_function[e]>characteristic_function[b]:
+                    print "ERROR: game is not Monotone"
+                    return False
     return r
 
 def predecessors(player,player_permutation):
@@ -104,7 +113,7 @@ class Coop_Game():
 pl=["A","B","C"]
 #cf={"A":.4,"B":.4,"C":.2,"A,B":.4,"B,C":.4,"A,C":.1,"A,B,C":1}
 #cf={"A":1/3,"B":1/3,"C":1/3,"A,B":2/3,"B,C":2/3,"A,C":2/3,"A,B,C":1}
-cf={"A":40,"B":40,"C":20,"A,B":70,"B,C":58,"A,C":40,"A,B,C":100}
+cf={"A":40,"B":40,"C":20,"A,B":40,"B,C":40,"A,C":40,"A,B,C":100}
 #cf={"A":40,"B":40,"C":20,"A,B":70,"B,C":40,"A,C":60,"A,B,C":100}
 a=Coop_Game(pl,cf)
 print a.valid
