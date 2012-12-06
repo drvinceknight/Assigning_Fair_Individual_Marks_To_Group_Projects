@@ -102,12 +102,10 @@ class Coop_Game():
         return self.shapley
 
 pl=["A","B","C"]
-cf={"A":1,"B":3,"A,B":3,"B,C":2,"A,B,C":5,"A,C":2,"C":4}
+#cf={"A":.4,"B":.4,"C":.2,"A,B":.4,"B,C":.4,"A,C":.1,"A,B,C":1}
+#cf={"A":1/3,"B":1/3,"C":1/3,"A,B":2/3,"B,C":2/3,"A,C":2/3,"A,B,C":1}
+#cf={"A":40,"B":40,"C":20,"A,B":70,"B,C":60,"A,C":40,"A,B,C":100}
+cf={"A":40,"B":40,"C":20,"A,B":70,"B,C":40,"A,C":60,"A,B,C":100}
 a=Coop_Game(pl,cf)
+print a.valid
 print a.shapley()
-pl=["A","B"]
-cf={"A":5,"B":12,"A,B":12}
-a=Coop_Game(pl,cf)
-print a.shapley()
-#print a.valid
-#print a.characteristic_function
