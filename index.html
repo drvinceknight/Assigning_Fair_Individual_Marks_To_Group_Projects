@@ -93,7 +93,7 @@
                 </ul>
                 </section>
 
-                <section>
+                <section data-state="Math_Slide">
                 <h2> Characteristic Function Games</h2>
                 <hr>
                 <p align="left">
@@ -104,7 +104,7 @@
                 </section>
 
 
-                <section>
+                <section data-state="Math_Slide">
                 <h2>Taxi Problem</h2>
                 <hr>
                 <p align="centre">
@@ -123,7 +123,7 @@
                 </ul>
                 </section>
 
-                <section>
+                <section data-state="Math_Slide">
                 <h2> Monotone Games</h2>
 
                 <hr>
@@ -134,7 +134,8 @@
                 <img src="https://docs.google.com/drawings/pub?id=15IRhriVn8vJa28HKAqj1lzixUWIPyOuiEmGiqnt2TXo&w=450" >
 
                 </section>
-                <section>
+
+                <section data-state="Math_Slide">
                 <h2> Superadditive Games</h2>
 
                 <hr>
@@ -205,7 +206,7 @@
                 </table>
                 </section>
 
-                <section>
+                <section data-state="Math_Slide">
                 <h2>Shapley Value</h2>
                 <hr>
                 <p align="left">
@@ -269,7 +270,7 @@
                 </section>
 
 
-                <section>
+                <section data-state="Math_Slide">
                 <h2>Shapley Value Calculation</h2>
                 <hr>
                 <table style="margin:auto" border="1">
@@ -333,13 +334,13 @@
                 </section>
 
 
-                <section>
+                <section data-state="Math_Slide">
                 <h2>Mark Calculation</h2>
                 <hr>
                 $$\text{m}(i)=\text{M}\times\left(\text{OP}+\text{CW}\times{\phi(i)\over \max_j{\phi(j)}}\right)$$
                 </section>
 
-                <section>
+                <section data-state="Math_Slide">
                 <h2>Fair Marks</h2>
                 <hr>
                 <ol>
@@ -397,10 +398,9 @@
 				]
 			});
 
-            Reveal.addEventListener( "Math_Slide", function( event ) {
-                MathJax.Hub.Rerender();
-                } );
-
+        Reveal.addEventListener( 'slidechanged', function( event ) {
+            MathJax.Hub.Rerender(event.currentSlide);
+            });
 		</script>
 
 	</body>
