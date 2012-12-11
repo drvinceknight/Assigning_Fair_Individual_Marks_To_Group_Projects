@@ -1,143 +1,139 @@
 <!doctype html>
 <html lang="en">
 
-	<head>
-		<meta charset="utf-8">
+<head>
+    <meta charset="utf-8">
 
-		<title>Cooperative Game Theory</title>
+    <title>Cooperative Game Theory</title>
 
-		<meta name="description" content="A Brief description of the Shapley value with an aim to use it in the inidividual assessmenet of group projects">
-		<meta name="author" content="Vincent Knight">
+    <meta name="description" content="A Brief description of the Shapley value with an aim to use it in the inidividual assessmenet of group projects">
+    <meta name="author" content="Vincent Knight">
 
-		<meta name="apple-mobile-web-app-capable" content="yes" />
-		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
 
-		<link rel="stylesheet" href="css/reveal.css">
-		<link rel="stylesheet" href="css/theme/simple.css" id="theme">
+    <link rel="stylesheet" href="css/reveal.css">
+    <link rel="stylesheet" href="css/theme/simple.css" id="theme">
 
-		<!-- For syntax highlighting -->
-		<link rel="stylesheet" href="lib/css/zenburn.css">
+    <!-- For syntax highlighting -->
+    <link rel="stylesheet" href="lib/css/zenburn.css">
 
-		<!-- If the query includes 'print-pdf', use the PDF print sheet -->
-		<script>
-			document.write( '<link rel="stylesheet" href="css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
-		</script>
+    <!-- If the query includes 'print-pdf', use the PDF print sheet -->
+    <script>
+        document.write( '<link rel="stylesheet" href="css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
+    </script>
 
 <script type="text/x-mathjax-config">
-  MathJax.Hub.Config({
-      tex2jax: {
-        inlineMath: [ ['$','$'], ["\\(","\\)"] ],
-         processEscapes: true
-         }
-        });
-        </script>
+MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+     processEscapes: true
+     }
+    });
+    </script>
 
-        <script type="text/javascript"
-            src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
-         </script>
+    <script type="text/javascript"
+        src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+     </script>
 
-		<!--[if lt IE 9]>
-		<script src="lib/js/html5shiv.js"></script>
-		<![endif]-->
-	</head>
+    <!--[if lt IE 9]>
+    <script src="lib/js/html5shiv.js"></script>
+    <![endif]-->
+</head>
 
-	<body>
+<body>
 
-		<div class="reveal">
+    <div class="reveal">
 
-			<!-- Any section element inside of this container is displayed as a slide -->
-			<div class="slides">
+        <!-- Any section element inside of this container is displayed as a slide -->
+        <div class="slides">
 
-                <section data-markdown>
-                    ##Cooperative Game Theory
-                    ###Introduction to the Shapley Value
+            <section data-markdown>
+                ##Cooperative Game Theory
+                ###Introduction to the Shapley Value
 
-                    ---
+                ---
 
-                    ####Vincent Knight
-                    [www.vincent-knight.com](http://www.vincent-knight.com)
+                ####Vincent Knight
+                [www.vincent-knight.com](http://www.vincent-knight.com)
 
-                </section>
+            </section>
 
-                <section data-markdown>
-                    ##Alice and Bob share a taxi:
+            <section data-markdown>
+                ##Alice and Bob share a taxi:
 
-                    ---
+                ---
 
-                    - It costs Alice £5 to get home.
-                    - It costs Bob £12 to get home (this will be the total fare).
-                    - Alice lives on Bob's way home.
+                - It costs Alice £5 to get home.
+                - It costs Bob £12 to get home (this will be the total fare).
+                - Alice lives on Bob's way home.
 
-                    ---
+                ---
 
-                    <p align="left">When Alice gets out of the cab, how much should she pay?</p>
+                <p align="left">When Alice gets out of the cab, how much should she pay?</p>
 
-                </section>
-
-
-                <section>
-                <h2>Cooperative Games</h2>
-
-                <hr>
-
-                <ul>
-                <li> $N=\{1,\dots,n\}$ players.</li>
-                <li> Coalitions $C\subseteq N$.</li>
-                    <p class="fragment">Examples: </p>
-                        <ul>
-                        <li class="fragment">$C_1=\{2,5\}$</li>
-                        <li class="fragment">$C_2=\{1\}$</li>
-                        <li class="fragment">$C_2=N$</li>
-                        <li class="fragment">$C_2=\emptyset$</li>
-                        </ul>
-                </ul>
-                </section>
-
-                <section>
-                <h2> Characteristic Function Games</h2>
-                <hr>
-                <p align="left">
-                A characteristic game $G$ is given by a pair: $(N,v)$. Where:
-                $$v:2^{N}\to\mathbb{R}$$
-                is a characteristic function which maps each coalition $C\subseteq N$ to a real number $v(C)$.
-                </p>
-                </section>
+            </section>
 
 
-                <section>
-                <h2>Taxi Problem</h2>
-                <hr>
-                <p align="centre">
-                <img src="https://docs.google.com/drawings/pub?id=19HXdzeOPNyNuTpXm_21HZPMcBKfsH4tZsozAW3eSAco&amp;w=800">
-                </p>
-                <hr>
-                <p align="left">
-                $N=\{A,B\}$
-                and we have:
-                </p>
-                <ul>
-                <li>$v(\emptyset)=0$</li>
-                <li>$v(A)=5$</li>
-                <li>$v(B)=12$</li>
-                <li>$v(A,B)=12$</li>
-                </ul>
-                </section>
+            <section>
+            <h2>Cooperative Games</h2>
 
-                <section>
-                <h2> Monotone Games</h2>
+            <hr>
 
-                <hr>
-                <p align='left'>
-                A characteristic function game $G=(N,v)$ is said to be monotone if it satisfies $v(S_2)\geq v(S_1)$ for all pairs $S_1\subseteq S_2$.
-                </p>
-                <hr>
-                <img src="https://docs.google.com/drawings/pub?id=15IRhriVn8vJa28HKAqj1lzixUWIPyOuiEmGiqnt2TXo&w=450" >
+            <ul>
+            <li> $N=\{1,\dots,n\}$ players.</li>
+            <li> Coalitions $C\subseteq N$.</li>
+                <p class="fragment">Examples: </p>
+                    <ul>
+                    <li class="fragment">$C_1=\{2,5\}$</li>
+                    <li class="fragment">$C_2=\{1\}$</li>
+                    <li class="fragment">$C_2=N$</li>
+                    <li class="fragment">$C_2=\emptyset$</li>
+                    </ul>
+            </ul>
+            </section>
 
-                </section>
-<<<<<<< HEAD
-=======
+            <section>
+            <h2> Characteristic Function Games</h2>
+            <hr>
+            <p align="left">
+            A characteristic game $G$ is given by a pair: $(N,v)$. Where:
+            $$v:2^{N}\to\mathbb{R}$$
+            is a characteristic function which maps each coalition $C\subseteq N$ to a real number $v(C)$.
+            </p>
+            </section>
 
->>>>>>> 173e89d8720840dbc4ef273f9588154759b8405b
+
+            <section>
+            <h2>Taxi Problem</h2>
+            <hr>
+            <p align="centre">
+            <img src="https://docs.google.com/drawings/pub?id=19HXdzeOPNyNuTpXm_21HZPMcBKfsH4tZsozAW3eSAco&amp;w=800">
+            </p>
+            <hr>
+            <p align="left">
+            $N=\{A,B\}$
+            and we have:
+            </p>
+            <ul>
+            <li>$v(\emptyset)=0$</li>
+            <li>$v(A)=5$</li>
+            <li>$v(B)=12$</li>
+            <li>$v(A,B)=12$</li>
+            </ul>
+            </section>
+
+            <section>
+            <h2> Monotone Games</h2>
+
+            <hr>
+            <p align='left'>
+            A characteristic function game $G=(N,v)$ is said to be monotone if it satisfies $v(S_2)\geq v(S_1)$ for all pairs $S_1\subseteq S_2$.
+            </p>
+            <hr>
+            <img src="https://docs.google.com/drawings/pub?id=15IRhriVn8vJa28HKAqj1lzixUWIPyOuiEmGiqnt2TXo&w=450" >
+
+            </section>
                 <section>
                 <h2> Superadditive Games</h2>
 
