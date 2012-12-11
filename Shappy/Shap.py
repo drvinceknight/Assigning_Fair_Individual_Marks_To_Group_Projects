@@ -62,9 +62,6 @@ def Marginal_Contribution(player,player_permutation,characteristic_function):
         if e in characteristic_function:
             return characteristic_function[e]-predecessor_contribution
 
-#print "Say wha?", Marginal_Contribution("B",pi,cf)
-#print "Say wha?", Marginal_Contribution("C",pi,cf)
-#print "Say wha?", Marginal_Contribution("A",pi,cf)
 
 def Shapley_calculation(player_list,characteristic_function):
     """
@@ -81,13 +78,6 @@ def Shapley_calculation(player_list,characteristic_function):
     for e in Marginal_Contribution_dict:
         Marginal_Contribution_dict[e]/=k
     return Marginal_Contribution_dict
-
-#pl=["A","B","C"]
-#cf={"A":1,"B":3,"C":4,"A,B":3,"B,C":4,"A,C":4,"A,B,C":5}
-#pi=("C","A","B")
-#pl=["A","B"]
-#cf={"A":5,"B":12,"A,B":12}
-#print Shapley_calculation(pl,cf)
 
 class Coop_Game():
     def __init__(self,player_list,characteristic_function):

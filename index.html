@@ -75,7 +75,7 @@
                 </section>
 
 
-                <section data-state="Math_Slide">
+                <section>
                 <h2>Cooperative Games</h2>
 
                 <hr>
@@ -134,19 +134,23 @@
                 <img src="https://docs.google.com/drawings/pub?id=15IRhriVn8vJa28HKAqj1lzixUWIPyOuiEmGiqnt2TXo&w=450" >
 
                 </section>
+<<<<<<< HEAD
+=======
+
+>>>>>>> 173e89d8720840dbc4ef273f9588154759b8405b
                 <section>
                 <h2> Superadditive Games</h2>
 
                 <hr>
                 <p align='left'>
-                A characteristic function game $G=(N,v)$ is said to be superadditive if it satisfies $v(C\cup D)\geq v(C)+v(D)$ for all pairs $C,D\subseteq N$.
+                A characteristic function game $G=(N,v)$ is said to be superadditive if it satisfies $v(S_1\cup S_2)\geq v(S_1)+v(S_2)$ for all pairs $S_1,S_2\subseteq N$.
                 </p>
                 <hr>
                 <img src="https://docs.google.com/drawings/pub?id=19ukbxZySY8VmFbyO495lZel7PzwJslvAgw6ULDUY_6U&amp;w=800" >
 
                 </section>
 
-                <section data-state="Math_Slide">
+                <section>
                 <h2>Solution Concepts</h2>
                 <hr>
                 <p align="left">
@@ -159,7 +163,7 @@
                 <h2> Fair Distribution</h2>
                 <hr>
                 <ol>
-                    <li>Efficiency: $\sum_{i\in N}x_i$=v(N);</li>
+                    <li>Efficiency: $\sum_{i\in N}x_i=v(N)$;</li>
                     <li>Null player: if $i$ does not contribute, then $x_i=0$;</li>
                     <li>Symmetry: if $i$ and $j$ are symmetric in then $x_i=x_j$;</li>
                     <li>Additivity: (look it up if you're interested).</li>
@@ -168,6 +172,7 @@
 
                 </section>
 
+                <section>
                 <section>
                 <h2>Taxi Problem</h2>
                 <hr>
@@ -204,7 +209,10 @@
                 </tr>
                 </table>
                 </section>
-
+                <section>
+                <iframe width="640" height="360" src="http://www.youtube.com/embed/aThG4YAFErw" frameborder="0" allowfullscreen></iframe>
+                </section>
+                </section>
                 <section>
                 <h2>Shapley Value</h2>
                 <hr>
@@ -231,7 +239,7 @@
 
                 </section>
 
-                <section data-state='Math_Slide'<>
+                <section>
                 <h2>Contributions</h2>
                 <hr>
                 <table style="margin:auto" border="1">
@@ -343,14 +351,14 @@
                 <h2>Fair Marks</h2>
                 <hr>
                 <ol>
-                <li>Efficiency: No contribution is lost;</li>
-                <li>Null player: if $i$ does not contribute, then $m(i)=M\times OP$;</li>
+                <li>Efficiency: only way to maximise group mark is equal contribution;</li>
+                <li>Null player: if $i$ does not contribute, then $m(i)=0$;</li>
                 <li>Symmetry: if $i$ and $j$ contribute equally, they get the same mark.</li>
                 </ol>
 
                 </section>
 
-                <section data-state="Math_Slide">
+                <section>
                 $$\text{m}(A)=85\times(.7+.3)=85$$
                 <hr>
                 $$\text{m}(B)=85\times\left(.7+.3\times {35\over 45}\right)={238\over 3}\approx 79.33$$
@@ -359,14 +367,14 @@
                 </section>
 
 
-                <section data-state='Math_Slide' data-markdown>
-                ##The real problem...
+                <section>
+                <h2>The real problem...</h2>
 
-                ---
+                <hr>
 
                 How do we get $\phi$?
 
-                ![fowm_pic](https://docs.google.com/drawings/pub?id=1nSoxZtx8lZuhW6ewpfTFrlPjLMDxV-QltVkxPwENaUc&w=800)
+                <img src="https://docs.google.com/drawings/pub?id=1nSoxZtx8lZuhW6ewpfTFrlPjLMDxV-QltVkxPwENaUc&w=800">
                 </section>
 			</div>
 
@@ -397,10 +405,9 @@
 				]
 			});
 
-            Reveal.addEventListener( "Math_Slide", function( event ) {
-                MathJax.Hub.Rerender();
-                } );
-
+        Reveal.addEventListener( 'slidechanged', function( event ) {
+            MathJax.Hub.Rerender(event.currentSlide);
+            });
 		</script>
 
 	</body>
