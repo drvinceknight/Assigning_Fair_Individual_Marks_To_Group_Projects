@@ -1,0 +1,418 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+
+    <title>Cooperative Game Theory</title>
+
+    <meta name="description" content="A Brief description of the Shapley value with an aim to use it in the inidividual assessmenet of group projects">
+    <meta name="author" content="Vincent Knight">
+
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+    <link rel="stylesheet" href="css/reveal.css">
+    <link rel="stylesheet" href="css/theme/simple.css" id="theme">
+
+    <!-- For syntax highlighting -->
+    <link rel="stylesheet" href="lib/css/zenburn.css">
+
+    <!-- If the query includes 'print-pdf', use the PDF print sheet -->
+    <script>
+        document.write( '<link rel="stylesheet" href="css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
+    </script>
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+     processEscapes: true
+     }
+    });
+    </script>
+
+    <script type="text/javascript"
+        src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+     </script>
+
+    <!--[if lt IE 9]>
+    <script src="lib/js/html5shiv.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+
+    <div class="reveal">
+
+        <!-- Any section element inside of this container is displayed as a slide -->
+        <div class="slides">
+
+            <section data-markdown>
+                ##Cooperative Game Theory
+                ###Introduction to the Shapley Value
+
+                ---
+
+                ####Vincent Knight
+                [www.vincent-knight.com](http://www.vincent-knight.com)
+
+            </section>
+
+            <section data-markdown>
+                ##Alice and Bob share a taxi:
+
+                ---
+
+                - It costs Alice £5 to get home.
+                - It costs Bob £12 to get home (this will be the total fare).
+                - Alice lives on Bob's way home.
+
+                ---
+
+                <p align="left">When Alice gets out of the cab, how much should she pay?</p>
+
+            </section>
+
+
+            <section>
+            <h2>Cooperative Games</h2>
+
+            <hr>
+
+            <ul>
+            <li> $N=\{1,\dots,n\}$ players.</li>
+            <li> Coalitions $S\subseteq N$.</li>
+                <p class="fragment">Examples: </p>
+                    <ul>
+                    <li class="fragment">$S_1=\{2,5\}$</li>
+                    <li class="fragment">$S_2=\{1\}$</li>
+                    <li class="fragment">$S_2=N$</li>
+                    <li class="fragment">$S_2=\emptyset$</li>
+                    </ul>
+            </ul>
+            </section>
+
+            <section>
+            <h2> Characteristic Function Games</h2>
+            <hr>
+            <p align="left">
+            A characteristic game $G$ is given by a pair: $(N,v)$. Where:
+            $$v:2^{N}\to\mathbb{R}$$
+            is a characteristic function which maps each coalition $S\subseteq N$ to a real number $v(S)$.
+            </p>
+            </section>
+
+
+            <section>
+            <h2>Taxi Problem</h2>
+            <hr>
+            <p align="centre">
+            <img src="https://docs.google.com/drawings/pub?id=19HXdzeOPNyNuTpXm_21HZPMcBKfsH4tZsozAW3eSAco&amp;w=800">
+            </p>
+            <hr>
+            <p align="left">
+            $N=\{A,B\}$
+            and we have:
+            </p>
+            <ul>
+            <li>$v(\emptyset)=0$</li>
+            <li>$v(A)=5$</li>
+            <li>$v(B)=12$</li>
+            <li>$v(A,B)=12$</li>
+            </ul>
+            </section>
+
+            <section>
+            <h2> Monotone Games</h2>
+
+            <hr>
+            <p align='left'>
+            A characteristic function game $G=(N,v)$ is said to be monotone if it satisfies $v(S_2)\geq v(S_1)$ for all pairs $S_1\subseteq S_2$.
+            </p>
+            <hr>
+            <img src="https://docs.google.com/drawings/pub?id=15IRhriVn8vJa28HKAqj1lzixUWIPyOuiEmGiqnt2TXo&w=450" >
+
+            </section>
+                <section>
+                <h2> Superadditive Games</h2>
+
+                <hr>
+                <p align='left'>
+                A characteristic function game $G=(N,v)$ is said to be superadditive if it satisfies $v(S_1\cup S_2)\geq v(S_1)+v(S_2)$ for all pairs $S_1,S_2\subseteq N$.
+                </p>
+                <hr>
+                <img src="https://docs.google.com/drawings/pub?id=19ukbxZySY8VmFbyO495lZel7PzwJslvAgw6ULDUY_6U&amp;w=800" >
+
+                </section>
+
+                <section>
+                <h2>Solution Concepts</h2>
+                <hr>
+                <p align="left">
+                The 'solution' of a superadditive game corresponds to a vector: $x\in\mathbb{R}^{|N|}_{\geq0}$ that satisfies:
+                $$\sum_{i\in N}x_i=v(N)$$
+                </p>
+                </section>
+
+                <section>
+                <h2> Fair Distribution</h2>
+                <hr>
+                <ol>
+                    <li>Efficiency: $\sum_{i\in N}x_i=v(N)$;</li>
+                    <li>Null player: if $i$ does not contribute, then $x_i=0$;</li>
+                    <li>Symmetry: if $i$ and $j$ are symmetric in then $x_i=x_j$;</li>
+                    <li>Additivity: (look it up if you're interested).</li>
+                <ol>
+
+
+                </section>
+
+                <section>
+                <section>
+                <h2>Taxi Problem</h2>
+                <hr>
+                <p align="centre">
+                <img src="https://docs.google.com/drawings/pub?id=19HXdzeOPNyNuTpXm_21HZPMcBKfsH4tZsozAW3eSAco&amp;w=800">
+                </p>
+                <hr>
+                <table style="margin:auto" border="1">
+                <tr>
+                <th>$\pi$</th>
+                <th>Alice</th>
+                <th>Bob</th>
+                </tr>
+                <tr>
+                <td>(A,B)</td>
+                <td>5</td>
+                <td>7</td>
+                </tr>
+                <tr>
+                <td>(B,A)</td>
+                <td>0</td>
+                <td>12</td>
+                </tr>
+                <tr class='fragment'>
+                <td>
+                $\phi$
+                </td>
+                <td>
+                2.5
+                </td>
+                <td>
+                9.5
+                </td>
+                </tr>
+                </table>
+                </section>
+                <section>
+                <iframe width="640" height="360" src="http://www.youtube.com/embed/aThG4YAFErw" frameborder="0" allowfullscreen></iframe>
+                </section>
+                </section>
+                <section>
+                <h2>Shapley Value</h2>
+                <hr>
+                <p align="left">
+                Given a characteristic function game $G=(N,v)$ the Shapley value of a player $i\in N$ is given by:
+                $$\phi_{i}(G)={1\over |N|!}\sum_{\pi\in\Pi_N}\Delta_{\pi}^{G}(i)$$
+                </p>
+
+                </section>
+
+
+                <section data-markdown>
+                ##Why am I telling you this?
+                </section>
+
+                <section data-markdown>
+                ##Applying this to group work
+
+                ---
+
+                - Assume Amy, Bernard and Caroline work on a group project.
+                - Assume the marking criteria states: 70% output and 30% group work.
+                - Assume the total mark given to the project is 85%.
+
+                </section>
+
+                <section>
+                <h2>Contributions</h2>
+                <hr>
+                <table style="margin:auto" border="1">
+                <tr>
+                <th>$S$</th>
+                <th>$v(S)$</th>
+                </tr>
+                <tr>
+                <td>$A$</td>
+                <td>40</td>
+                </tr>
+                <tr>
+                <td>$B$</td>
+                <td>40</td>
+                </tr>
+                <tr>
+                <td>$C$</td>
+                <td>20</td>
+                </tr>
+                <tr>
+                <td>$\{A,B\}$</td>
+                <td>70</td>
+                </tr>
+                <tr>
+                <td>$\{A,C\}$</td>
+                <td>60</td>
+                </tr>
+                <tr>
+                <td>$\{B,C\}$</td>
+                <td>40</td>
+                </tr>
+                </table>
+
+
+                </section>
+
+
+                <section>
+                <h2>Shapley Value Calculation</h2>
+                <hr>
+                <table style="margin:auto" border="1">
+                <tr>
+                <th>$\pi$</th>
+                <th>Amy</th>
+                <th>Bernard</th>
+                <th>Caroline</th>
+                </tr>
+                <tr>
+                <td>(A,B,C)</td>
+                <td>$40$</td>
+                <td>$30$</td>
+                <td>$30$</td>
+                </tr>
+                <tr>
+                <td>(A,C,B)</td>
+                <td>$40$</td>
+                <td>$40$</td>
+                <td>$20$</td>
+                </tr>
+                <tr>
+                <td>(B,A,C)</td>
+                <td>$30$</td>
+                <td>$40$</td>
+                <td>$30$</td>
+                </tr>
+                <tr>
+                <td>(B,C,A)</td>
+                <td>$60$</td>
+                <td>$40$</td>
+                <td>$0$</td>
+                </tr>
+                <tr>
+                <td>(C,A,B)</td>
+                <td>$40$</td>
+                <td>$40$</td>
+                <td>$20$</td>
+                </tr>
+                <tr>
+                <td>(C,B,A)</td>
+                <td>$60$</td>
+                <td>$20$</td>
+                <td>$20$</td>
+                </tr>
+                <tr class='fragment'>
+                <td>
+                $\phi$
+                </td>
+                <td>
+                $45$
+                </td>
+                <td>
+                $35$
+                </td>
+                <td>
+                $20$
+                </td>
+                </tr>
+                </table>
+                </section>
+
+
+                <section>
+                <h2>Mark Calculation</h2>
+                <hr>
+                $$\text{m}(i)=\text{M}\times\left(\text{OP}+\text{CW}\times{\phi(i)\over \max_j{\phi(j)}}\right)$$
+                </section>
+
+                <section>
+                <h2>Fair Marks</h2>
+                <hr>
+                <ol>
+                <li>Efficiency: only way to maximise group mark is equal contribution;</li>
+                <li>Null player: if $i$ does not contribute, then $m(i)=0$;</li>
+                <li>Symmetry: if $i$ and $j$ contribute equally, they get the same mark.</li>
+                </ol>
+
+                </section>
+
+                <section>
+                $$\text{m}(A)=85\times(.7+.3)=85$$
+                <hr>
+                $$\text{m}(B)=85\times\left(.7+.3\times {35\over 45}\right)={238\over 3}\approx 79.33$$
+                <hr>
+                $$\text{m}(C)=85\times\left(.7+.3\times{20\over45}\right)={425\over 6}\approx 70.83$$
+                </section>
+
+                <section data-markdown>
+                ##Resources
+
+                ---
+
+                - [A sage interact](http://interact.sagemath.org/node/80)
+                - [A spreadsheet](https://docs.google.com/spreadsheet/ccc?key=0Ah_zrw5uAafbdFBfVmdyUUZweXhFNTRTWGlSOXlKNUE)
+                </section>
+
+                <section>
+                <h2>The real problem...</h2>
+
+                <hr>
+
+                How do we get $\phi$?
+
+                <img src="https://docs.google.com/drawings/pub?id=1nSoxZtx8lZuhW6ewpfTFrlPjLMDxV-QltVkxPwENaUc&w=800">
+                </section>
+			</div>
+
+		</div>
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.min.js"></script>
+
+		<script>
+
+			// Full list of configuration options available here:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+
+				theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+				transition: Reveal.getQueryHash().transition || 'linear', // default/cube/page/concave/zoom/linear/none
+
+				// Optional libraries used to extend on reveal.js
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/showdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+					{ src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+				]
+			});
+
+        Reveal.addEventListener( 'slidechanged', function( event ) {
+            MathJax.Hub.Rerender(event.currentSlide);
+            });
+		</script>
+
+	</body>
+</html>

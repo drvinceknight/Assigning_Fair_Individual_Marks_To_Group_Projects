@@ -1,418 +1,182 @@
-<!doctype html>
-<html lang="en">
-
 <head>
-    <meta charset="utf-8">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>VK: PCUTL</title>
+<meta name="viewport" content="width=device-width">
+<link rel="icon" href="./favicon.ico" type="image/x-icon" />
+<link rel="stylesheet" href="main.css">
 
-    <title>Cooperative Game Theory</title>
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-    <meta name="description" content="A Brief description of the Shapley value with an aim to use it in the inidividual assessmenet of group projects">
-    <meta name="author" content="Vincent Knight">
+ga('create', 'UA-38016329-2', 'auto');
+ga('send', 'pageview');
 
-    <meta name="apple-mobile-web-app-capable" content="yes" />
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+</script>
 
-    <link rel="stylesheet" href="css/reveal.css">
-    <link rel="stylesheet" href="css/theme/simple.css" id="theme">
-
-    <!-- For syntax highlighting -->
-    <link rel="stylesheet" href="lib/css/zenburn.css">
-
-    <!-- If the query includes 'print-pdf', use the PDF print sheet -->
-    <script>
-        document.write( '<link rel="stylesheet" href="css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
-    </script>
-
-<script type="text/x-mathjax-config">
-MathJax.Hub.Config({
-  tex2jax: {
-    inlineMath: [ ['$','$'], ["\\(","\\)"] ],
-     processEscapes: true
-     }
-    });
-    </script>
-
-    <script type="text/javascript"
-        src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
-     </script>
-
-    <!--[if lt IE 9]>
-    <script src="lib/js/html5shiv.js"></script>
-    <![endif]-->
 </head>
+<header class="site-header">
 
-<body>
+    <div class="wrap">
 
-    <div class="reveal">
+     <a class="site-title" href="./index.html">Vince Knight: PCUTL</a>
 
-        <!-- Any section element inside of this container is displayed as a slide -->
-        <div class="slides">
+     <nav class="site-nav">
+       <a href="#" class="menu-icon">
+         <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+            viewBox="0 0 18 15" enable-background="new 0 0 18 15" xml:space="preserve">
+           <path fill="#505050" d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0
+             h15.031C17.335,0,18,0.665,18,1.484L18,1.484z"/>
+           <path fill="#505050" d="M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0c0-0.82,0.665-1.484,1.484-1.484
+             h15.031C17.335,6.031,18,6.696,18,7.516L18,7.516z"/>
+           <path fill="#505050" d="M18,13.516C18,14.335,17.335,15,16.516,15H1.484C0.665,15,0,14.335,0,13.516l0,0
+             c0-0.82,0.665-1.484,1.484-1.484h15.031C17.335,12.031,18,12.696,18,13.516L18,13.516z"/>
+         </svg>
+       </a>
+      <div class="trigger">
+          <a class="page-link" href="drvinceknight.github.io/">Home</a>
+          <a class="page-link" href="drvinceknight.github.io/unpeudemath">Blog</a>
+          <a class="page-link" href="drvinceknight.github.io/teaching">Teaching</a>
+          <a class="page-link" href="drvinceknight.github.io/research">Research</a>
+          <a class="page-link" href="drvinceknight.github.io/outreach">Outreach</a>
+          <a class="page-link" href="drvinceknight.github.io/other">Other</a>
+      </div>
+     </nav>
 
-            <section data-markdown>
-                ##Cooperative Game Theory
-                ###Introduction to the Shapley Value
+    </div>
+</header>
 
-                ---
+            <body>
+            <div class="page-content">
+            <div class="wrap">
+            <div class="home">
 
-                ####Vincent Knight
-                [www.vincent-knight.com](http://www.vincent-knight.com)
+                <p>I have finished the first 3 modules of a higher education certification process. This page contains all my outputs.</p>
 
-            </section>
+                <p>I post about <a href="http://www.cardiff.ac.uk/pcutl" target-'_blank'>PCUTL</a> on G+ using: <a href="https://plus.google.com/s/%23pcutl" target="_blank">#pcutl</a> (clicking on "Most Recent" gives the posts in chronological order).</p>
 
-            <section data-markdown>
-                ##Alice and Bob share a taxi:
+                <h1>Module 1:</h1>
+                <p><a href="./Module_1/Portfolio/VK_Module_1_PCUTL_Portfolio.pdf", target="_blank">Here</a> is my module 1 portfolio.</p>
 
-                ---
+                <h1>Module 2:</h1>
 
-                - It costs Alice £5 to get home.
-                - It costs Bob £12 to get home (this will be the total fare).
-                - Alice lives on Bob's way home.
+                <p>I've started a blog series reviewing some literature I've picked out for this Module:
 
-                ---
-
-                <p align="left">When Alice gets out of the cab, how much should she pay?</p>
-
-            </section>
-
-
-            <section>
-            <h2>Cooperative Games</h2>
-
-            <hr>
-
-            <ul>
-            <li> $N=\{1,\dots,n\}$ players.</li>
-            <li> Coalitions $S\subseteq N$.</li>
-                <p class="fragment">Examples: </p>
                     <ul>
-                    <li class="fragment">$S_1=\{2,5\}$</li>
-                    <li class="fragment">$S_2=\{1\}$</li>
-                    <li class="fragment">$S_2=N$</li>
-                    <li class="fragment">$S_2=\emptyset$</li>
+                    <li><a href="http://drvinceknight.blogspot.co.uk/2013/01/my-first-blog-series-review-of-some.html" target="_blank">"When good teaching leads to bad results: The disasters of well taught Mathematics courses" by Alan Schoenfeld</a></li>
+                    <li><a href="http://drvinceknight.blogspot.co.uk/2013/01/a-review-on-paper-about-moore-method.html" target="_blank">"A quick-start guide to the Moore Method" by Mahavier et al.</a></li>
+                    <li><a href="http://drvinceknight.blogspot.co.uk/2013/01/a-review-of-paper-offering-evidence-for.html" target="_blank">"The inverted classroom in a large enrolment introductory physics course: a case study" by Simon Bates and Ross Gallowayi</a></li>
+                    <li><a href="http://drvinceknight.blogspot.co.uk/2013/01/a-review-of-book-about-teaching-and.html" target="_blank">"Approaches to Learning: A Guide for Teachers" by Jordan et al.</a></li>
+                    <li><a href="http://drvinceknight.blogspot.co.uk/2013/01/a-review-of-paper-looking-at-using.html" target="_blank">"A Characterization of Social Networks for Effective Communication and Collaboration in Computing Education" by G. Gannod and K. Bachman</a></li>
+                    <li><a href="http://drvinceknight.blogspot.co.uk/2013/01/a-review-of-interpretation-of-blooms.html" target="_blank">"Bloom's Taxonomy Interpreted for Mathematics" by Lindsey Shorser</a></li>
+                    <li><a href="http://drvinceknight.blogspot.co.uk/2013/01/a-review-of-book-about-good-teachers.html" target="_blank">"Enhancing University Teaching: Lessons from Research into Award-Winning Teachers" by David Kember and Carmel McNaught</a></li>
+                    <li><a href="http://drvinceknight.blogspot.co.uk/2013/02/books-and-papers-id-have-liked-to-review.html" target="_blank">Books and papers I'd have liked to review</a></li>
                     </ul>
-            </ul>
-            </section>
-
-            <section>
-            <h2> Characteristic Function Games</h2>
-            <hr>
-            <p align="left">
-            A characteristic game $G$ is given by a pair: $(N,v)$. Where:
-            $$v:2^{N}\to\mathbb{R}$$
-            is a characteristic function which maps each coalition $S\subseteq N$ to a real number $v(S)$.
-            </p>
-            </section>
-
-
-            <section>
-            <h2>Taxi Problem</h2>
-            <hr>
-            <p align="centre">
-            <img src="https://docs.google.com/drawings/pub?id=19HXdzeOPNyNuTpXm_21HZPMcBKfsH4tZsozAW3eSAco&amp;w=800">
-            </p>
-            <hr>
-            <p align="left">
-            $N=\{A,B\}$
-            and we have:
-            </p>
-            <ul>
-            <li>$v(\emptyset)=0$</li>
-            <li>$v(A)=5$</li>
-            <li>$v(B)=12$</li>
-            <li>$v(A,B)=12$</li>
-            </ul>
-            </section>
-
-            <section>
-            <h2> Monotone Games</h2>
-
-            <hr>
-            <p align='left'>
-            A characteristic function game $G=(N,v)$ is said to be monotone if it satisfies $v(S_2)\geq v(S_1)$ for all pairs $S_1\subseteq S_2$.
-            </p>
-            <hr>
-            <img src="https://docs.google.com/drawings/pub?id=15IRhriVn8vJa28HKAqj1lzixUWIPyOuiEmGiqnt2TXo&w=450" >
-
-            </section>
-                <section>
-                <h2> Superadditive Games</h2>
-
-                <hr>
-                <p align='left'>
-                A characteristic function game $G=(N,v)$ is said to be superadditive if it satisfies $v(S_1\cup S_2)\geq v(S_1)+v(S_2)$ for all pairs $S_1,S_2\subseteq N$.
                 </p>
-                <hr>
-                <img src="https://docs.google.com/drawings/pub?id=19ukbxZySY8VmFbyO495lZel7PzwJslvAgw6ULDUY_6U&amp;w=800" >
+                <p>Here's a video I put together that accompanies this <a href="https://github.com/drvinceknight/pandocipy" target="_blank"> python script </a> looking at creating inclusive learning resources:</p>
 
-                </section>
+                <iframe width="560" height="315" src="//www.youtube.com/embed/jFiyLYskgao" frameborder="0" allowfullscreen></iframe>
 
-                <section>
-                <h2>Solution Concepts</h2>
-                <hr>
-                <p align="left">
-                The 'solution' of a superadditive game corresponds to a vector: $x\in\mathbb{R}^{|N|}_{\geq0}$ that satisfies:
-                $$\sum_{i\in N}x_i=v(N)$$
-                </p>
-                </section>
+                <p><a href="./Module_2/Portfolio/VK_M2_Portfolio.pdf" target="_blank">Here</a> is my module 2 portfolio.</p>
 
-                <section>
-                <h2> Fair Distribution</h2>
-                <hr>
-                <ol>
-                    <li>Efficiency: $\sum_{i\in N}x_i=v(N)$;</li>
-                    <li>Null player: if $i$ does not contribute, then $x_i=0$;</li>
-                    <li>Symmetry: if $i$ and $j$ are symmetric in then $x_i=x_j$;</li>
-                    <li>Additivity: (look it up if you're interested).</li>
-                <ol>
+                <h1>Module 3:</h1>
+                <p><a href="http://drvinceknight.blogspot.co.uk/2013/10/blooms-taxonomy-drawn-in-tikz.html" target="_blank">Here</a> is a blog post with some Tikz code for a pyramid corresponding to Bloom's taxonomy.</p>
+                <p><a href="https://www.dropbox.com/s/yc6c0wbkx42duay/educationresearch.bib" target="_blank">Here's a bibtex file with a bunch of references I used for my third module.</a></p>
+                <p>Here's a video of the presentation titled: 'Understanding student engagement with formative assessment.' This was done for the group part of this module:</p>
+
+                <iframe width="560" height="315" src="//www.youtube.com/embed/soUWEQUVYzg" frameborder="0" allowfullscreen></iframe>
+
+                <p><a href="./Module_3/Portfolio/vkm3portfolio.pdf" target="_blank">Here</a> is my module 3 portfolio.</p>
 
 
-                </section>
 
-                <section>
-                <section>
-                <h2>Taxi Problem</h2>
-                <hr>
-                <p align="centre">
-                <img src="https://docs.google.com/drawings/pub?id=19HXdzeOPNyNuTpXm_21HZPMcBKfsH4tZsozAW3eSAco&amp;w=800">
-                </p>
-                <hr>
-                <table style="margin:auto" border="1">
-                <tr>
-                <th>$\pi$</th>
-                <th>Alice</th>
-                <th>Bob</th>
-                </tr>
-                <tr>
-                <td>(A,B)</td>
-                <td>5</td>
-                <td>7</td>
-                </tr>
-                <tr>
-                <td>(B,A)</td>
-                <td>0</td>
-                <td>12</td>
-                </tr>
-                <tr class='fragment'>
-                <td>
-                $\phi$
-                </td>
-                <td>
-                2.5
-                </td>
-                <td>
-                9.5
-                </td>
-                </tr>
-                </table>
-                </section>
-                <section>
-                <iframe width="640" height="360" src="http://www.youtube.com/embed/aThG4YAFErw" frameborder="0" allowfullscreen></iframe>
-                </section>
-                </section>
-                <section>
-                <h2>Shapley Value</h2>
-                <hr>
-                <p align="left">
-                Given a characteristic function game $G=(N,v)$ the Shapley value of a player $i\in N$ is given by:
-                $$\phi_{i}(G)={1\over |N|!}\sum_{\pi\in\Pi_N}\Delta_{\pi}^{G}(i)$$
-                </p>
+            </div>
+            </div>
+            </div>
+            <footer class="site-footer">
 
-                </section>
+<div class="wrap">
 
+<h2 class="footer-heading">Vince Knight</h2>
 
-                <section data-markdown>
-                ##Why am I telling you this?
-                </section>
+<div class="footer-col-1 column">
+  <ul>
+    <li>
+      <a href="https://github.com/drvinceknight">
+        <span class="icon github">
+          <svg version="1.1" class="github-icon-svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+             viewBox="0 0 16 16" enable-background="new 0 0 16 16" xml:space="preserve">
+            <path fill-rule="evenodd" clip-rule="evenodd" fill="#C2C2C2" d="M7.999,0.431c-4.285,0-7.76,3.474-7.76,7.761
+            c0,3.428,2.223,6.337,5.307,7.363c0.388,0.071,0.53-0.168,0.53-0.374c0-0.184-0.007-0.672-0.01-1.32
+            c-2.159,0.469-2.614-1.04-2.614-1.04c-0.353-0.896-0.862-1.135-0.862-1.135c-0.705-0.481,0.053-0.472,0.053-0.472
+            c0.779,0.055,1.189,0.8,1.189,0.8c0.692,1.186,1.816,0.843,2.258,0.645c0.071-0.502,0.271-0.843,0.493-1.037
+            C4.86,11.425,3.049,10.76,3.049,7.786c0-0.847,0.302-1.54,0.799-2.082C3.768,5.507,3.501,4.718,3.924,3.65
+            c0,0,0.652-0.209,2.134,0.796C6.677,4.273,7.34,4.187,8,4.184c0.659,0.003,1.323,0.089,1.943,0.261
+            c1.482-1.004,2.132-0.796,2.132-0.796c0.423,1.068,0.157,1.857,0.077,2.054c0.497,0.542,0.798,1.235,0.798,2.082
+            c0,2.981-1.814,3.637-3.543,3.829c0.279,0.24,0.527,0.713,0.527,1.437c0,1.037-0.01,1.874-0.01,2.129
+            c0,0.208,0.14,0.449,0.534,0.373c3.081-1.028,5.302-3.935,5.302-7.362C15.76,3.906,12.285,0.431,7.999,0.431z"/>
+          </svg>
+        </span>
+        <span class="username">drvinceknight</span>
+      </a>
+    </li>
+    <li>
+      <a href="https://twitter.com/@drvinceknight">
+        <span class="icon twitter">
+          <svg version="1.1" class="twitter-icon-svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+             viewBox="0 0 16 16" enable-background="new 0 0 16 16" xml:space="preserve">
+            <path fill="#C2C2C2" d="M15.969,3.058c-0.586,0.26-1.217,0.436-1.878,0.515c0.675-0.405,1.194-1.045,1.438-1.809
+            c-0.632,0.375-1.332,0.647-2.076,0.793c-0.596-0.636-1.446-1.033-2.387-1.033c-1.806,0-3.27,1.464-3.27,3.27
+            c0,0.256,0.029,0.506,0.085,0.745C5.163,5.404,2.753,4.102,1.14,2.124C0.859,2.607,0.698,3.168,0.698,3.767
+            c0,1.134,0.577,2.135,1.455,2.722C1.616,6.472,1.112,6.325,0.671,6.08c0,0.014,0,0.027,0,0.041c0,1.584,1.127,2.906,2.623,3.206
+            C3.02,9.402,2.731,9.442,2.433,9.442c-0.211,0-0.416-0.021-0.615-0.059c0.416,1.299,1.624,2.245,3.055,2.271
+            c-1.119,0.877-2.529,1.4-4.061,1.4c-0.264,0-0.524-0.015-0.78-0.046c1.447,0.928,3.166,1.469,5.013,1.469
+            c6.015,0,9.304-4.983,9.304-9.304c0-0.142-0.003-0.283-0.009-0.423C14.976,4.29,15.531,3.714,15.969,3.058z"/>
+          </svg>
+        </span>
+        <span class="username">@drvinceknight</span>
+      </a>
+    </li>
+    <li>
+      <a href="https://plus.google.com/+VincentKnight">
+        <span class="icon G+">
+            <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                 width="16px" height="16px" viewBox="0 0 134.658 131.646" enable-background="new 0 0 134.658 131.646"
+                 xml:space="preserve">
+            <g>
+                <path fill="#C2C2C2" d="M126.515,4.109H8.144c-2.177,0-3.94,1.763-3.94,3.938v115.546c0,2.179,1.763,3.942,3.94,3.942h118.371
+                    c2.177,0,3.94-1.764,3.94-3.942V8.048C130.455,5.872,128.691,4.109,126.515,4.109z"/>
+                <g>
+                    <path fill="#FFFFFF" d="M70.479,71.845l-3.983-3.093c-1.213-1.006-2.872-2.334-2.872-4.765c0-2.441,1.659-3.993,3.099-5.43
+                        c4.64-3.652,9.276-7.539,9.276-15.73c0-8.423-5.3-12.854-7.84-14.956h6.849l7.189-4.517H60.418
+                        c-5.976,0-14.588,1.414-20.893,6.619c-4.752,4.1-7.07,9.753-7.07,14.842c0,8.639,6.633,17.396,18.346,17.396
+                        c1.106,0,2.316-0.109,3.534-0.222c-0.547,1.331-1.1,2.439-1.1,4.32c0,3.431,1.763,5.535,3.317,7.528
+                        c-4.977,0.342-14.268,0.893-21.117,5.103c-6.523,3.879-8.508,9.525-8.508,13.51c0,8.202,7.731,15.842,23.762,15.842
+                        c19.01,0,29.074-10.519,29.074-20.932C79.764,79.709,75.344,75.943,70.479,71.845z M56,59.107
+                        c-9.51,0-13.818-12.294-13.818-19.712c0-2.888,0.547-5.87,2.428-8.199c1.773-2.218,4.861-3.657,7.744-3.657
+                        c9.168,0,13.923,12.404,13.923,20.382c0,1.996-0.22,5.533-2.762,8.09C61.737,57.785,58.762,59.107,56,59.107z M56.109,103.65
+                        c-11.826,0-19.452-5.657-19.452-13.523c0-7.864,7.071-10.524,9.504-11.405c4.64-1.561,10.611-1.779,11.607-1.779
+                        c1.105,0,1.658,0,2.538,0.111c8.407,5.983,12.056,8.965,12.056,14.629C72.362,98.542,66.723,103.65,56.109,103.65z"/>
+                    <polygon fill="#FFFFFF" points="98.393,58.938 98.393,47.863 92.923,47.863 92.923,58.938 81.866,58.938 81.866,64.469
+                        92.923,64.469 92.923,75.612 98.393,75.612 98.393,64.469 109.506,64.469 109.506,58.938       "/>
+                </g>
+            </g>
+            </svg>
+        </span>
+        <span class="username">+VincentKnight</span>
+      </a>
+    </li>
+  </ul>
+</div>
 
-                <section data-markdown>
-                ##Applying this to group work
+<div class="footer-col-2 column">
+  <p class="text">This site contains my talks. It is automatically generated from <a href='https://github.com/drvinceknight/Talks' target='_blank'>this github repository</a>.</p>
+</div>
 
-                ---
+</div>
 
-                - Assume Amy, Bernard and Caroline work on a group project.
-                - Assume the marking criteria states: 70% output and 30% group work.
-                - Assume the total mark given to the project is 85%.
-
-                </section>
-
-                <section>
-                <h2>Contributions</h2>
-                <hr>
-                <table style="margin:auto" border="1">
-                <tr>
-                <th>$S$</th>
-                <th>$v(S)$</th>
-                </tr>
-                <tr>
-                <td>$A$</td>
-                <td>40</td>
-                </tr>
-                <tr>
-                <td>$B$</td>
-                <td>40</td>
-                </tr>
-                <tr>
-                <td>$C$</td>
-                <td>20</td>
-                </tr>
-                <tr>
-                <td>$\{A,B\}$</td>
-                <td>70</td>
-                </tr>
-                <tr>
-                <td>$\{A,C\}$</td>
-                <td>60</td>
-                </tr>
-                <tr>
-                <td>$\{B,C\}$</td>
-                <td>40</td>
-                </tr>
-                </table>
-
-
-                </section>
-
-
-                <section>
-                <h2>Shapley Value Calculation</h2>
-                <hr>
-                <table style="margin:auto" border="1">
-                <tr>
-                <th>$\pi$</th>
-                <th>Amy</th>
-                <th>Bernard</th>
-                <th>Caroline</th>
-                </tr>
-                <tr>
-                <td>(A,B,C)</td>
-                <td>$40$</td>
-                <td>$30$</td>
-                <td>$30$</td>
-                </tr>
-                <tr>
-                <td>(A,C,B)</td>
-                <td>$40$</td>
-                <td>$40$</td>
-                <td>$20$</td>
-                </tr>
-                <tr>
-                <td>(B,A,C)</td>
-                <td>$30$</td>
-                <td>$40$</td>
-                <td>$30$</td>
-                </tr>
-                <tr>
-                <td>(B,C,A)</td>
-                <td>$60$</td>
-                <td>$40$</td>
-                <td>$0$</td>
-                </tr>
-                <tr>
-                <td>(C,A,B)</td>
-                <td>$40$</td>
-                <td>$40$</td>
-                <td>$20$</td>
-                </tr>
-                <tr>
-                <td>(C,B,A)</td>
-                <td>$60$</td>
-                <td>$20$</td>
-                <td>$20$</td>
-                </tr>
-                <tr class='fragment'>
-                <td>
-                $\phi$
-                </td>
-                <td>
-                $45$
-                </td>
-                <td>
-                $35$
-                </td>
-                <td>
-                $20$
-                </td>
-                </tr>
-                </table>
-                </section>
-
-
-                <section>
-                <h2>Mark Calculation</h2>
-                <hr>
-                $$\text{m}(i)=\text{M}\times\left(\text{OP}+\text{CW}\times{\phi(i)\over \max_j{\phi(j)}}\right)$$
-                </section>
-
-                <section>
-                <h2>Fair Marks</h2>
-                <hr>
-                <ol>
-                <li>Efficiency: only way to maximise group mark is equal contribution;</li>
-                <li>Null player: if $i$ does not contribute, then $m(i)=0$;</li>
-                <li>Symmetry: if $i$ and $j$ contribute equally, they get the same mark.</li>
-                </ol>
-
-                </section>
-
-                <section>
-                $$\text{m}(A)=85\times(.7+.3)=85$$
-                <hr>
-                $$\text{m}(B)=85\times\left(.7+.3\times {35\over 45}\right)={238\over 3}\approx 79.33$$
-                <hr>
-                $$\text{m}(C)=85\times\left(.7+.3\times{20\over45}\right)={425\over 6}\approx 70.83$$
-                </section>
-
-                <section data-markdown>
-                ##Resources
-
-                ---
-
-                - [A sage interact](http://interact.sagemath.org/node/80)
-                - [A spreadsheet](https://docs.google.com/spreadsheet/ccc?key=0Ah_zrw5uAafbdFBfVmdyUUZweXhFNTRTWGlSOXlKNUE)
-                </section>
-
-                <section>
-                <h2>The real problem...</h2>
-
-                <hr>
-
-                How do we get $\phi$?
-
-                <img src="https://docs.google.com/drawings/pub?id=1nSoxZtx8lZuhW6ewpfTFrlPjLMDxV-QltVkxPwENaUc&w=800">
-                </section>
-			</div>
-
-		</div>
-		<script src="lib/js/head.min.js"></script>
-		<script src="js/reveal.min.js"></script>
-
-		<script>
-
-			// Full list of configuration options available here:
-			// https://github.com/hakimel/reveal.js#configuration
-			Reveal.initialize({
-				controls: true,
-				progress: true,
-				history: true,
-
-				theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
-				transition: Reveal.getQueryHash().transition || 'linear', // default/cube/page/concave/zoom/linear/none
-
-				// Optional libraries used to extend on reveal.js
-				dependencies: [
-					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
-					{ src: 'plugin/markdown/showdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
-					{ src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
-					{ src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
-				]
-			});
-
-        Reveal.addEventListener( 'slidechanged', function( event ) {
-            MathJax.Hub.Rerender(event.currentSlide);
-            });
-		</script>
-
-	</body>
-</html>
+</footer>
+</body>
